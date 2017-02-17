@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Liquidation Portal</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Timeline CSS -->
+    <link href="dist/css/timeline.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="bower_components/morrisjs/morris.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script
+        src="http://maps.googleapis.com/maps/api/js">
+        </script>
+
+        <script>
+        var myCenter=new google.maps.LatLng(14.574953, 121.046882);
+
+        function initialize()
+        {
+        var mapProp = {
+          center:myCenter,
+          zoom:17,
+          mapTypeId:google.maps.MapTypeId.ROADMAP
+          };
+
+        var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+        var marker=new google.maps.Marker({
+          position:myCenter,
+          });
+
+        marker.setMap(map);
+        
+        // Zoom to 20 when clicking on marker
+        google.maps.event.addListener(marker,'click',function() {
+          map.setZoom(20);
+          map.setCenter(marker.getPosition());
+          });
+
+        var infowindow = new google.maps.InfoWindow({
+          content:"PCN Promopro Inc."
+          });
+
+        infowindow.open(map,marker);
+        }
+
+        google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+
+</head>
+
+<body>
+    <!--nav-->
+    <div class="container">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <a class="navbar-brand" href="index.html">Liquidation Portal</a>
+            <div id="navbar" class="navbar-collapse collapse" role="navigation">
+                <ul class="nav nav-pills">
+                    <li><a href="aboutUs.html"><h5><i class="fa fa-question-circle fa-fw"></i>About</h5></a></li>
+                    <li><a href="#"><h5><i class="fa fa-phone-square fa-fw"></i>Contact Us</h5></a></li>
+                    <li><a href="Services.html"><h5><i class="fa fa-cogs fa-fw"></i>Services</h5></a></li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div>
+    </nav>
+</div>
+<br><br><br><br>
+<!--end of nav-->
+    <!--sample.tab-->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="alert alert-info">Contact Us</h1>
+            </div>
+        </div>
+
+        <div id="googleMap" style="width:100%;height:400px;"></div>
+
+        <div class="container">
+                    
+                <br><br>
+
+                    <div class="row">
+                        <div class="col-md-6">
+
+                            <div class="alert alert-success hidden" id="contactSuccess">
+                                <strong>Success!</strong> Your message has been sent to us.
+                            </div>
+
+                            <div class="alert alert-danger hidden" id="contactError">
+                                <strong>Error!</strong> There was an error sending your message.
+                            </div>
+
+                            <h4 class="mb-sm mt-sm"><strong>Send us your message</strong></h4>
+                            <form id="contactForm" action="php/contact-form.php" method="POST">
+                                <div class="row">
+                                    <div class="form-group">
+                                        <div class="col-md-6">
+                                            <label>Your name *</label>
+                                            <input type="text" value="" data-msg-required="Please enter your name." maxlength="100" class="form-control" name="name" id="name" required>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label>Your email address *</label>
+                                            <input type="email" value="" data-msg-required="Please enter your email address." data-msg-email="Please enter a valid email address." maxlength="100" class="form-control" name="email" id="email" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            <label>Subject</label>
+                                            <input type="text" value="" data-msg-required="Please enter the subject." maxlength="100" class="form-control" name="subject" id="subject" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            <label>Message *</label>
+                                            <textarea maxlength="5000" data-msg-required="Please enter your message." rows="10" class="form-control" name="message" id="message" required></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br><br>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <input type="submit" value="Send Message" class="btn btn-primary btn-lg mb-xlg" data-loading-text="Loading...">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-6">
+
+                            <h4 class="heading-primary mt-lg">Get in <strong>Touch</strong></h4>
+                            <p>wala paang mailagay</p>
+
+                            <hr>
+
+                            <h4 class="heading-primary">The <strong>Office</strong></h4>
+                            <ul class="list list-icons list-icons-style-3 mt-xlg">
+                                <li><i class="fa fa-map-marker"></i> <strong>Address:</strong> 27 Cresta Street Barangay Malamig, Mandaluyong CIty</li>
+                                <li><i class="fa fa-phone"></i> <strong>Phone:</strong> (+632) 718.13.64 to 65</li>
+                                <li><i class="fa fa-envelope"></i> <strong>Email:</strong> <a href="mailto:mail@example.com">pcnpipls@example.com</a></li>
+                            </ul>
+
+                            <hr>
+
+                            <h4 class="heading-primary">Business <strong>Hours</strong></h4>
+                            <ul class="list list-icons list-dark mt-xlg">
+                                <li><i class="fa fa-clock-o"></i> Monday - Friday 8am to 5pm</li>
+                                <li><i class="fa fa-clock-o"></i> Saturday - 9am to 2pm</li>
+                                <li><i class="fa fa-clock-o"></i> Sunday - Closed</li>
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+    <!--sample.tab-->
+
+
+
+    <!-- jQuery -->
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="bower_components/metisMenu/dist/metisMenu.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="dist/js/sb-admin-2.js"></script>
+
+    
+
+</body>
+
+</html>

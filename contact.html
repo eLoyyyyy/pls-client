@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <!-- Basic -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">   
+
+        <title>PCN Liquidation System</title>   
+
+        <meta name="keywords" content="liquidation reimbursement" />
+        <meta name="description" content="exclusive for PCNPromoPro inc. liquidation/reimbursement system">
+        <meta name="author" content="Jared Zyb Valdez, John Kevin Galiza, Rica Elaine Lagunsad">
+
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="image/logo.png" type="image/x-icon" />
+        <link rel="apple-touch-icon" href="image/logo.png">
+
+        <!-- Mobile Metas -->
+        <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <!-- Web Fonts  -->
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800%7CShadows+Into+Light" rel="stylesheet" type="text/css">
+
+        <!-- Vendor CSS -->
+        <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="vendor/simple-line-icons/css/simple-line-icons.min.css">
+        <link rel="stylesheet" href="vendor/owl.carousel/assets/owl.carousel.min.css">
+        <link rel="stylesheet" href="vendor/owl.carousel/assets/owl.theme.default.min.css">
+        <link rel="stylesheet" href="vendor/magnific-popup/magnific-popup.min.css">
+
+        <!-- Theme CSS -->
+        <link rel="stylesheet" href="css/theme.css">
+        <link rel="stylesheet" href="css/theme-elements.css">
+        <link rel="stylesheet" href="css/theme-blog.css">
+        <link rel="stylesheet" href="css/theme-shop.css">
+        <link rel="stylesheet" href="css/theme-animate.css">
+
+        <!-- Current Page CSS -->
+        <link rel="stylesheet" href="vendor/rs-plugin/css/settings.css" media="screen">
+        <link rel="stylesheet" href="vendor/rs-plugin/css/layers.css" media="screen">
+        <link rel="stylesheet" href="vendor/rs-plugin/css/navigation.css" media="screen">
+        <link rel="stylesheet" href="vendor/circle-flip-slideshow/css/component.css" media="screen">
+
+        <!-- Skin CSS -->
+        <link rel="stylesheet" href="css/skins/skin-corporate-law-office.css"> 
+
+        <!-- Demo CSS -->
+        <link rel="stylesheet" href="css/demos/demo-corporate-law-office.css">
+
+        <!-- Theme Custom CSS -->
+        <link rel="stylesheet" href="css/custom.css">
+
+        <!-- Head Libs -->
+        <script src="vendor/modernizr/modernizr.min.js"></script>
+
+    <script
+        src="http://maps.googleapis.com/maps/api/js">
+        </script>
+
+        <script>
+        var myCenter=new google.maps.LatLng(14.574953, 121.046882);
+
+        function initialize()
+        {
+        var mapProp = {
+          center:myCenter,
+          zoom:17,
+          mapTypeId:google.maps.MapTypeId.ROADMAP
+          };
+
+        var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+        var marker=new google.maps.Marker({
+          position:myCenter,
+          });
+
+        marker.setMap(map);
+        
+        // Zoom to 20 when clicking on marker
+        google.maps.event.addListener(marker,'click',function() {
+          map.setZoom(20);
+          map.setCenter(marker.getPosition());
+          });
+
+        var infowindow = new google.maps.InfoWindow({
+          content:"PCN Promopro Inc."
+          });
+
+        infowindow.open(map,marker);
+        }
+
+        google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+
+</head>
+
+<body>
+    <!--nav-->
+            <div class="body">
+                <header id="header" class="header-no-border-bottom" data-plugin-options='{"stickyEnabled": true, "stickyEnableOnBoxed": true, "stickyEnableOnMobile": true, "stickyStartAt": 115, "stickySetTop": "-115px", "stickyChangeLogo": false}'>
+                    <div class="header-body">
+                        <div class="header-container container">
+                            <div class="header-row">
+                                <div class="header-column">
+                                    <div class="header-logo">
+                                        <a href="index.php">
+                                            <img alt="pcn" width="111" height="54" data-sticky-width="82" data-sticky-height="40" data-sticky-top="33" src="image/logo.png">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="header-column">
+                                    <ul class="header-extra-info">
+                                        <li>
+                                            <div class="feature-box feature-box-call feature-box-style-2">
+                                                <div class="feature-box-icon">
+                                                    <i>&nbsp;</i>
+                                                </div>
+                                                <div class="feature-box-info">
+                                                    <h4 class="mb-none">&nbsp;</h4>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="hidden-xs">
+                                            <div class="feature-box feature-box-mail feature-box-style-2">
+                                                <a href="index.php">
+                                                    <div class="feature-box-icon">
+                                                        <i class="fa fa-money"></i>
+                                                    </div>
+                                                    <div class="feature-box-info">
+                                                        <h4 class="mb-none">LIQUIDATION PORTAL</h4>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="header-container header-nav header-nav-bar header-nav-bar-primary">
+                            <div class="container">
+                                <button class="btn header-btn-collapse-nav" data-toggle="collapse" data-target=".header-nav-main">
+                                    Menu <i class="fa fa-bars"></i>
+                                </button>
+                                <div class="header-nav-main header-nav-main-light header-nav-main-effect-1 header-nav-main-sub-effect-1 collapse">
+                                    <nav>
+                                        <ul class="nav nav-pills" id="mainNav">
+                                            <li class="dropdown">
+                                                <a href="about.html"> <i class="fa fa-question-circle"></i>
+                                                    About Us
+                                                </a>
+                                            </li>
+                                            <li class="dropdown">
+                                                <a href="contact.html"><i class="fa fa-phone-square"></i>
+                                                    Contact Us
+                                                </a>
+                                            </li>
+                                            <li class="dropdown">
+                                                <a href="service.html"><i class="fa fa-cogs"></i>
+                                                    Services
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+            <!--nav-->
+    <!--sample.tab-->
+    <br><br>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="heading heading-tertiary">Contact Us</h1>
+            </div>
+        </div>
+
+        <div id="googleMap" style="width:100%;height:400px;"></div>
+
+        <div class="container">
+                    
+                <br><br>
+
+                    <div class="row">
+                        <div class="col-md-6">
+
+                            <div class="alert alert-success hidden" id="contactSuccess">
+                                <strong>Success!</strong> Your message has been sent to us.
+                            </div>
+
+                            <div class="alert alert-danger hidden" id="contactError">
+                                <strong>Error!</strong> There was an error sending your message.
+                            </div>
+
+                            <h4 class="mb-sm mt-sm"><strong>Send us your message</strong></h4>
+                            <form id="contactForm" action="php/contact-form.php" method="POST">
+                                <div class="row">
+                                    <div class="form-group">
+                                        <div class="col-md-6">
+                                            <label>Your name *</label>
+                                            <input type="text" value="" data-msg-required="Please enter your name." maxlength="100" class="form-control" name="name" id="name" required>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label>Your email address *</label>
+                                            <input type="email" value="" data-msg-required="Please enter your email address." data-msg-email="Please enter a valid email address." maxlength="100" class="form-control" name="email" id="email" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            <label>Subject</label>
+                                            <input type="text" value="" data-msg-required="Please enter the subject." maxlength="100" class="form-control" name="subject" id="subject" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            <label>Message *</label>
+                                            <textarea maxlength="5000" data-msg-required="Please enter your message." rows="10" class="form-control" name="message" id="message" required></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br><br>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <input type="submit" value="Send Message" class="btn btn-primary btn-lg mb-xlg" data-loading-text="Loading...">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-6">
+
+                            <h4 class="heading-primary mt-lg">Get in <strong>Touch</strong></h4>
+                            <p>A strong network of 145 regulars and 5,000 field people nationwide.<br>
+                            <strong>7 Regional Offices : </strong><br>Central Luzon (Angeles), South Luzon (Calamba), Visayas (Cebu, Tacloban &Bacolod), Mindanao (Davao & CDO), and 42 Satellite Offices.
+                            </p>
+
+                            <hr>
+
+                            <h4 class="heading-primary">The <strong>Office</strong></h4>
+                            <ul class="list list-icons list-icons-style-3 mt-xlg">
+                                <li><i class="fa fa-map-marker"></i> <strong>Address:</strong> 27 Cresta Street Barangay Malamig, Mandaluyong CIty</li>
+                                <li><i class="fa fa-phone"></i> <strong>Phone:</strong> (+632) 718.13.64 to 65</li>
+                                <li><i class="fa fa-envelope"></i> <strong>Email:</strong> <a href="mailto:mail@example.com">pcnpipls@example.com</a></li>
+                            </ul>
+
+                            <hr>
+
+                            <h4 class="heading-primary">Business <strong>Hours</strong></h4>
+                            <ul class="list list-icons list-dark mt-xlg">
+                                <li><i class="fa fa-clock-o"></i> Monday - Friday 8am to 5pm</li>
+                                <li><i class="fa fa-clock-o"></i> Saturday - 9am to 2pm</li>
+                                <li><i class="fa fa-clock-o"></i> Sunday - Closed</li>
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+    <!--sample.tab-->
+
+
+            <!--footer-->
+            <footer>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <br><br>
+                            <p style="text-align:center">© Liquidation Portal. 2015</p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+            <!--footer-->
+            <!--main-->
+
+
+
+
+        <!-- Vendor -->
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/jquery.appear/jquery.appear.min.js"></script>
+        <script src="vendor/jquery.easing/jquery.easing.min.js"></script>
+        <script src="vendor/jquery-cookie/jquery-cookie.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+        <script src="vendor/common/common.min.js"></script>
+        <script src="vendor/jquery.validation/jquery.validation.min.js"></script>
+        <script src="vendor/jquery.stellar/jquery.stellar.min.js"></script>
+        <script src="vendor/jquery.easy-pie-chart/jquery.easy-pie-chart.min.js"></script>
+        <script src="vendor/jquery.gmap/jquery.gmap.min.js"></script>
+        <script src="vendor/jquery.lazyload/jquery.lazyload.min.js"></script>
+        <script src="vendor/isotope/jquery.isotope.min.js"></script>
+        <script src="vendor/owl.carousel/owl.carousel.min.js"></script>
+        <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+        <script src="vendor/vide/vide.min.js"></script>
+        
+        <!-- Theme Base, Components and Settings -->
+        <script src="js/theme.js"></script>
+        
+        <!-- Current Page Vendor and Views -->
+        <script src="vendor/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+        <script src="vendor/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+        <script src="vendor/circle-flip-slideshow/js/jquery.flipshow.min.js"></script>
+        <script src="js/views/view.home.js"></script>
+
+        <!-- Current Page Vendor and Views -->
+        <script src="js/views/view.contact.js"></script>
+
+        <!-- Demo -->
+        <script src="js/demos/demo-corporate-law-office.js"></script>   
+        
+        <!-- Theme Custom -->
+        <script src="js/custom.js"></script>
+        
+        <!-- Theme Initialization Files -->
+        <script src="js/theme.init.js"></script>
+
+        <!-- Google Analytics: Change UA-XXXXX-X to be your site's ID. Go to http://www.google.com/analytics/ for more information.
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        
+            ga('create', 'UA-12345678-1', 'auto');
+            ga('send', 'pageview');
+        </script>
+         -->
+
+    </body>
+</html>
